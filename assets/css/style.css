@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    --green : #197f5b;
+    --yellow: #ef9919;
+    --light-grey: #f9f5f2;
+    --dark-grey: #1b1b1b;
+    --white: #ffffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    padding-bottom: 10rem;
+}
+
+.header-content{
+    background-color: var(--green);
+    color: white;
+}
+
+.navbar{
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-menu path{
+    stroke: white
+}
+
+.header-information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1rem 1.5rem 5rem;
+    position: relative;
+}
+
+/*
+    Pseudoelementos
+    Elementos que NO existen en el HTML. Se agregan con ayuda de css
+
+    selector::pseudoelemento{}
+
+    ::after
+        Genera un pseudoelemento que se comporta como si fuera el ultimo hijo del elemento al que lo agregas
+
+    ::before
+        Genera un pseudoelemento que se comporta como si fuera el PRIMER hijo del elemento al que lo agregas
+
+ */
+
+.header-information::before{
+    content:"";
+    width: 0;
+    height: 0;
+    border-top: 3.5rem solid transparent;
+    border-right: 3.5rem solid transparent;
+    border-bottom: 3.5rem solid white;
+    border-left: 3.5rem solid white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+}
+
+.header-information::after{
+    content:"";
+    width: 0;
+    height: 0;
+    border-top: 3.5rem solid transparent;
+    border-right: 3.5rem solid white;
+    border-bottom: 3.5rem solid white;
+    border-left: 3.5rem solid transparent;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.header-image{
+    position: relative;
+    padding: 1rem 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.header-experience{
+    background-color: white;
+    color: var(--dark-grey);
+    padding: .25rem 1.5rem;
+    border-radius: 1.5rem;
+    position: absolute;
+}
+.header-experience > h4{
+    font-weight: 400;
+}
+.header-experience > h5{
+    color: var(--yellow);
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.header-experience:first-of-type{
+    top: 0;
+    left: -40px;
+}
+
+.header-experience:last-of-type{
+    bottom: 0;
+    right: -40px;
+}
+
+.header-information h1{
+    font-size: 2.5rem;
+}
+
+.header-information h1 > span{
+    color: var(--yellow);
+}
+
+.social-container{
+    width: 75%;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 400px;
+    padding: 1.5rem 0;
+}
+
+.social-circle{
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-contact{
+    background-color: var(--light-grey);
+    width: 90%;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+.input-wrapper{
+    background-color: #cfc6bf;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 35px;
+    margin: 1.5rem 0 1rem;
+}
+
+.input-wrapper > input{
+    border: none;
+    background-color: transparent;
+    width: 70%;
+    padding: 0.25rem 1.5rem;
+}
+
+.input-wrapper > input:focus{
+    outline: transparent;
+}
+
+.input-wrapper > button{
+    width: 30%;
+    border: none;
+    background-color: var(--green);
+    color: white;
+    border-radius: 1.5rem;
+}
+
+@media  screen and (min-width: 992px) {
+    .header-text{
+        order: 1;
+    }
+
+    .header-image{
+        order: 2;
+        margin-top: 2rem;
+    }
+
+    .social-container{
+        order: 3;
+    }
+
+    h1{
+        font-size: 3rem;
+    }
+
+    .header-information::before{
+        border-top: 5rem solid transparent;
+        border-right: 5rem solid transparent;
+        border-bottom: 5rem solid white;
+        border-left: 5rem solid white;    
+    }
+
+    .header-information::after{
+        border-bottom: 5rem solid white;
+        border-right: 5rem solid white;  
+        border-left: 5rem solid transparent;  
+        border-top: 5rem solid transparent;   
+    }
+}
